@@ -1,0 +1,8 @@
+[package]
+name = "example_gmimc"
+type = "bin"
+authors = ["TACEO GmbH"]
+compiler_version = ">=0.19.2"
+
+[dependencies]
+gmimc = { tag = "v0.3.0", git = "https://github.com/TaceoLabs/noir-gmimc" }
