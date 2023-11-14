@@ -1,0 +1,3 @@
+[workspace]
+members = ["aes", "gmimc", "griffin", "hydra"]
+default-member = "gmimc"

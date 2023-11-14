@@ -3,24 +3,20 @@ date := `date +%Y-%m-%d`
 default: collect-circuit-sizes
 
 collect-circuit-sizes outfile=('stats-' + date + '.md'):
-  #!/usr/bin/env bash
-
   rm {{outfile}} 2> /dev/null || true
   echo "# Circuit Sizes for Examples" >> {{outfile}}
+  
+  echo "## Circuit Sizes" >> {{outfile}}
+  echo "\`\`\`" >> {{outfile}}
+  nargo info --workspace >> {{outfile}}
+  echo "\`\`\`" >> {{outfile}}
+
   echo "## Noir Versions" >> {{outfile}}
   echo "\`\`\`" >> {{outfile}}
   nargo --version >> {{outfile}}
   echo "\`\`\`" >> {{outfile}}
 
-  outfilepath=`realpath {{outfile}}`
-  examples="aes gmimc griffin hydra"
-  for example in $examples; do
-    just collect-circuit-size-for $example $outfilepath;
-  done
-
-@collect-circuit-size-for EXAMPLE outfile: 
-  echo "## {{EXAMPLE}}" >> {{outfile}}
+  echo "## Crate Versions" >> {{outfile}}
   echo "\`\`\`" >> {{outfile}}
-  cd ../{{EXAMPLE}} && grep tag Nargo.toml >> {{outfile}}
-  cd ../{{EXAMPLE}} && (nargo info  >> {{outfile}})
+  bash -c "grep -h tag ../*/Nargo.toml" >> {{outfile}}
   echo "\`\`\`" >> {{outfile}}
