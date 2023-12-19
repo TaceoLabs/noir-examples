@@ -5,4 +5,4 @@ authors = ["TACEO GmbH"]
 compiler_version = ">=0.19.2"
 
 [dependencies]
-griffin = { tag = "v0.3.0", git = "https://github.com/TaceoLabs/noir-griffin" }
+griffin = { tag = "v0.4.0", git = "https://github.com/TaceoLabs/noir-griffin" }
