@@ -2,7 +2,7 @@
 name = "example_poseidon"
 type = "bin"
 authors = ["TACEO GmbH"]
-compiler_version = ">=0.19.2"
+compiler_version = ">=0.36.0"
 
 [dependencies]
-poseidon = { tag = "v0.1.0", git = "https://github.com/TaceoLabs/noir-poseidon", directory = "poseidon" }
+poseidon = { tag = "v0.2.0", git = "https://github.com/TaceoLabs/noir-poseidon", directory = "poseidon" }

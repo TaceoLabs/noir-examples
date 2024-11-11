@@ -1,6 +1,6 @@
 use dep::hydra;
 
-fn main(plains: [Field; 8], key : [Field; 4], iv: pub [Field;4]) -> pub [Field; 8] {
+fn main(plains: [Field; 8], key: [Field; 4], iv: pub [Field; 4]) -> pub [Field; 8] {
     hydra::bn254::enc::encrypt(plains, key, iv)
 }
 

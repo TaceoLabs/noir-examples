@@ -1,3 +1,2 @@
 [workspace]
 members = ["aes", "gmimc", "griffin", "hydra", "poseidon", "poseidon2"]
-default-member = "griffin"
